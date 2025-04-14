@@ -27,3 +27,9 @@ Ideal outcome:
 - Self-made art or spritework, visually pleasing.
 Minimal Viable outcome:
 - Movement and dying. Pivot to just dodging asteroids if too many things go wrong.
+
+### Weekly Milestones
+1. Movement + shooting
+2. Collision + scoring
+3. Spawning system for asteroids, death and respawning
+4. Art and assets
