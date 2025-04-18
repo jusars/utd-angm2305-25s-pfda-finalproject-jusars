@@ -9,7 +9,7 @@ display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.
 pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
-#surface
+#plain surface
 surf = pygame.Surface((100,200))
 surf.fill('orange')
 x = 100
