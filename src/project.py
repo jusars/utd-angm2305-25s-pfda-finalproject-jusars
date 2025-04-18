@@ -9,6 +9,10 @@ display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.
 pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
+#surface
+surf = pygame.Surface((100,200))
+surf.fill('orange')
+
 while running:
     # event loop
     # ESCAPE key to quit game
@@ -19,6 +23,8 @@ while running:
 
     # drawing the game
     display_surface.fill('midnightblue')
+    x += 0.1
+    display_surface.blit(surf, (100, 150))
     pygame.display.update()
 
 pygame.quit
