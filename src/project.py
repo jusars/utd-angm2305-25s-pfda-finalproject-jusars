@@ -5,7 +5,8 @@ import pygame
 # general setup (initializing, window, etc)
 pygame.init()
 WINDOW_WIDTH, WINDOW_HEIGHT = 1920, 1080
-display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.FULLSCREEN)
+pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
 while running:
