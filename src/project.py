@@ -14,5 +14,8 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-pygame.quit
     # drawing the game
+    display_surface.fill('midnightblue')
+    pygame.display.update()
+
+pygame.quit
