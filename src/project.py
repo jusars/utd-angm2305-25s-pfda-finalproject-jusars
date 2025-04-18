@@ -11,9 +11,11 @@ running = True
 
 while running:
     # event loop
+    # ESCAPE key to quit game
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
+        
 
     # drawing the game
     display_surface.fill('midnightblue')
