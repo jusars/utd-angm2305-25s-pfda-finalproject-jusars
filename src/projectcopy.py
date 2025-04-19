@@ -38,14 +38,19 @@ while running:
 #        if event.type == pygame.MOUSEBUTTONDOWN
 #            player_rect.center = event.pos
 
-    #player input
-#     (pygame.mouse.get_pos())
+    #player input (WASD AND ARROW KEYS)
         keys = pygame.key.get_pressed()
-    player_direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a]) or (int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT]))
-    player_direction.y = (int(keys[pygame.K_s]) - int(keys[pygame.K_w])) or (int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP]))
-   
-
+    player_direction.x = (int(keys[pygame.K_d]) - int(keys[pygame.K_a]) 
+                          or (int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT])))
+    player_direction.y = ((int(keys[pygame.K_s]) - int(keys[pygame.K_w])) 
+                          or (int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP])))
+    player_direction = player_direction.normalize() if player_direction else player_direction
     player_rect.center += player_direction * player_speed * dt
+
+    recent_leys = pygame.ley.get_just_pressed()
+    if keys[pygame.K_SPACE]:
+        print('fire laser!!!')
+
     # drawing the game
     display_surface.fill('midnightblue')
     for pos in star_positions:
