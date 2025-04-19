@@ -14,8 +14,8 @@ clock = pygame.time.Clock()
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
 player_rect = player_surf.get_frect(center = ((WINDOW_WIDTH // 2), (WINDOW_HEIGHT // 2)))
-player_direction = pygame.math.Vector2(2, -1)
-player_speed = 250
+player_direction = pygame.math.Vector2()
+player_speed = 300
 
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
 star_positions = [ (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)) for i in range(20)]
@@ -31,9 +31,18 @@ while running:
     # event loop
     # ESCAPE key to quit game
     for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-            running = False
+#        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+#            running = False
+#        if event.type == pygame.KEYDOWN and event.key
+#        if event.type == pygame.MOUSEBUTTONDOWN
+#            player_rect.center = event.pos
 
+    #player input
+#     (pygame.mouse.get_pos())
+        keys = pygame.key.get_pressed()
+    player_direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a])
+
+    player_rect.center += player_direction * player_speed * dt
     # drawing the game
     display_surface.fill('midnightblue')
     for pos in star_positions:
@@ -41,9 +50,6 @@ while running:
     
     display_surface.blit(meteor_surf, meteor_rect)
     display_surface.blit(laser_surf, laser_rect)
-
-    # player movement
-    player_rect.center += player_direction * player_speed * dt
     display_surface.blit(player_surf, player_rect.topleft)
 
     pygame.display.update()
