@@ -30,10 +30,9 @@ while running:
 
     # drawing the game
     display_surface.fill('midnightblue')
-    x += 0.1
-    display_surface.blit(player_surf, (x, 150))
+
     for pos in star_positions:
         display_surface.blit(star_surf, pos)
+    display_surface.blit(player_surf, (x, 150))
     pygame.display.update()
-
 pygame.quit
