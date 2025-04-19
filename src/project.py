@@ -17,6 +17,8 @@ x = 100
 
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
+player_rect = player_surf.get_frect(center = ((WINDOW_WIDTH // 2), (WINDOW_HEIGHT // 2)))
+
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
 star_positions = [ (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)) for i in range(20)]
 
@@ -33,6 +35,6 @@ while running:
 
     for pos in star_positions:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(player_surf, (x, 150))
+    display_surface.blit(player_rect, (x, 150))
     pygame.display.update()
 pygame.quit
