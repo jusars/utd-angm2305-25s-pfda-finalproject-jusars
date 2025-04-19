@@ -14,7 +14,8 @@ clock = pygame.time.Clock()
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
 player_rect = player_surf.get_frect(center = ((WINDOW_WIDTH // 2), (WINDOW_HEIGHT // 2)))
-player_direction = pygame.math.Vector2(20, -10)
+player_direction = pygame.math.Vector2(2, -1)
+player_speed = 10
 
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
 star_positions = [ (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)) for i in range(20)]
@@ -26,7 +27,7 @@ laser_surf = pygame.image.load(join('images', 'laser.png')).convert_alpha()
 laser_rect = laser_surf.get_frect(bottomleft = (20,(WINDOW_HEIGHT - 20)))
 
 while running:
-    clock.tick(30) #30 fps :)
+    dt = clock.tick(30) / 1000
     # event loop
     # ESCAPE key to quit game
     for event in pygame.event.get():
@@ -42,7 +43,7 @@ while running:
     display_surface.blit(laser_surf, laser_rect)
 
     # player movement
-    player_rect.center += player_direction
+    player_rect.center += player_direction * player_speed * dt
     display_surface.blit(player_surf, player_rect.topleft)
 
     pygame.display.update()
