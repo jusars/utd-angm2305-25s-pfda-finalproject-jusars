@@ -26,7 +26,7 @@ laser_surf = pygame.image.load(join('images', 'laser.png')).convert_alpha()
 laser_rect = laser_surf.get_frect(bottomleft = (20,(WINDOW_HEIGHT - 20)))
 
 while running:
-    clock.tick(24) #24 fps :)
+    clock.tick(30) #30 fps :)
     # event loop
     # ESCAPE key to quit game
     for event in pygame.event.get():
