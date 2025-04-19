@@ -10,6 +10,11 @@ display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.
 pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
+# plain surface (not having this broke my code?)
+surf = pygame.Surface((100,200))
+surf.fill('gray')
+x = 100
+
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
