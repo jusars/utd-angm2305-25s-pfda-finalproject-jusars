@@ -30,23 +30,20 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
-        
 
     # drawing the game
     display_surface.fill('midnightblue')
-
     for pos in star_positions:
         display_surface.blit(star_surf, pos)
-
     
-    display_surface.blit(laser_surf, laser_rect)
     display_surface.blit(meteor_surf, meteor_rect)
+    display_surface.blit(laser_surf, laser_rect)
 
     # player movement
     player_rect.x += player_direction * 0.4
-    if player_rect.right < WINDOW_WIDTH or player_rect.left <0:
+    if player_rect.right > WINDOW_WIDTH or player_rect.left <0:
         player_direction *= -1
-    display_surface.blit(player_surf, player_rect)
+    display_surface.blit(player_surf, player_rect.topleft)
 
     pygame.display.update()
 
