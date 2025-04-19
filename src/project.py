@@ -18,6 +18,7 @@ x = 100
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
+star_positions = [ (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)) for i in range(20)]
 
 while running:
     # event loop
@@ -31,9 +32,8 @@ while running:
     display_surface.fill('midnightblue')
     x += 0.1
     display_surface.blit(player_surf, (x, 150))
-    for i in range(20):
-        display_surface.blit(star_surf, 
-            (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)))
+    for pos in star_positions:
+        display_surface.blit(star_surf, pos)
     pygame.display.update()
 
 pygame.quit
