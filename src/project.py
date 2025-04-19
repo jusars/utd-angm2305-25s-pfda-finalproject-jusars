@@ -26,7 +26,7 @@ star_positions = [ (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDO
 meteor_surf = pygame.image.load(join('images', 'meteor.png')).convert_alpha()
 meteor_rect = meteor_surf.get_frect(center = ((WINDOW_WIDTH // 2), (WINDOW_HEIGHT //2)))
 
-laser_surf = pygame.image.load(join('image', 'laser.png')).convert_alpha()
+laser_surf = pygame.image.load(join('images', 'laser.png')).convert_alpha()
 laser_rect = laser_surf.get_frect(bottomleft = (20,(WINDOW_HEIGHT - 20)))
 
 while running:
