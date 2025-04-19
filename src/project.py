@@ -9,6 +9,7 @@ WINDOW_WIDTH, WINDOW_HEIGHT = 2560, 1440 # i have to do this otherwise my monito
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.FULLSCREEN)
 pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
+clock = pygame.time.Clock()
 
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
@@ -25,6 +26,7 @@ laser_surf = pygame.image.load(join('images', 'laser.png')).convert_alpha()
 laser_rect = laser_surf.get_frect(bottomleft = (20,(WINDOW_HEIGHT - 20)))
 
 while running:
+    clock.tick(24) #24 fps :)
     # event loop
     # ESCAPE key to quit game
     for event in pygame.event.get():
