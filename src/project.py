@@ -35,6 +35,6 @@ while running:
 
     for pos in star_positions:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(player_rect, (x, 150))
+    display_surface.blit(player_surf, player_rect)
     pygame.display.update()
 pygame.quit
