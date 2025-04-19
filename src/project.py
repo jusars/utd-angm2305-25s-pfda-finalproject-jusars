@@ -42,7 +42,7 @@ while running:
     display_surface.blit(laser_surf, laser_rect)
 
     # player movement
-    player_rect.x += player_direction * 1
+    player_rect.x += player_direction * 100
     if player_rect.right > WINDOW_WIDTH or player_rect.left <0:
         player_direction *= -1
     display_surface.blit(player_surf, player_rect.topleft)
