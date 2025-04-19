@@ -9,10 +9,8 @@ display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.
 pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
-#plain surface
-surf = pygame.Surface((100,200))
-surf.fill('orange')
-x = 100
+# importing images
+player_surf = pygame.image.lload('images/player.png')
 
 while running:
     # event loop
@@ -25,7 +23,7 @@ while running:
     # drawing the game
     display_surface.fill('midnightblue')
     x += 0.1
-    display_surface.blit(surf, (x, 150))
+    display_surface.blit(player_surf, (x, 150))
     pygame.display.update()
 
 pygame.quit
