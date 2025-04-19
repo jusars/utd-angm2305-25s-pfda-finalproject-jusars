@@ -31,8 +31,8 @@ while running:
     # event loop
     # ESCAPE key to quit game
     for event in pygame.event.get():
-#        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-#            running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            running = False
 #        if event.type == pygame.KEYDOWN and event.key
 #        if event.type == pygame.MOUSEBUTTONDOWN
 #            player_rect.center = event.pos
