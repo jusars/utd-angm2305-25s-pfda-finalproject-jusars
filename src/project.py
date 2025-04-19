@@ -32,7 +32,8 @@ while running:
     x += 0.1
     display_surface.blit(player_surf, (x, 150))
     for i in range(20):
-        display_surface.blit(star_surf, (random.int(0, WINDOW_WIDTH), random.int(0, WINDOW_HEIGHT)))
+        display_surface.blit(star_surf, 
+            (random.randrange(0, WINDOW_WIDTH), random.randrange(0, WINDOW_HEIGHT)))
     pygame.display.update()
 
 pygame.quit
