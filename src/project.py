@@ -1,6 +1,7 @@
 import random
 import math # i might want to use math
 import pygame
+from os.path import join
 
 # general setup (initializing, window, etc)
 pygame.init()
@@ -10,8 +11,8 @@ pygame.display.set_caption('Legally Distinct Asteroids Game')
 running = True
 
 # importing images
-player_surf = pygame.image.lload('images/player.png')
-
+player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
+star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
 while running:
     # event loop
     # ESCAPE key to quit game
