@@ -41,7 +41,11 @@ while running:
 #     (pygame.mouse.get_pos())
         keys = pygame.key.get_pressed()
     player_direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a])
+    player_direction.x = int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT])
 
+    player_direction.y = int(keys[pygame.K_s]) - int(keys[pygame.K_w])
+    player_direction.y = int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP])
+    
     player_rect.center += player_direction * player_speed * dt
     # drawing the game
     display_surface.fill('midnightblue')
