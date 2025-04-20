@@ -4,8 +4,8 @@ import pygame
 from os.path import join
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, groups):
+        super().__init__(groups)
         self.image = pygame.image.load(join('images', 'player.png')).convert_alpha()
         self.rect = self.image.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT /2))
     
@@ -19,6 +19,7 @@ clock = pygame.time.Clock()
 
 all_sprites = pygame.sprite.Group()
 player = Player()
+all_sprites.add(player)
 
 # importing images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
@@ -54,6 +55,12 @@ while running:
     #
 
     # player_rect.center += player_direction * player_speed * dt
+    #recent_keys = pygame.key.get_just_pressed()
+    #if recent_keys[pygame.K_SPACE]:
+     #   print('fire laser')
+
+    all_sprites.update()
+
     # drawing the game
     display_surface.fill('midnightblue')
     for pos in star_positions:
@@ -64,7 +71,7 @@ while running:
     #display_surface.blit(player_surf, player_rect.topleft)
     #display_surface.blit(player.image, player.rect)
     all_sprites.draw(display_surface)
-    
+
     pygame.display.update()
 
 
