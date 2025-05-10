@@ -19,7 +19,7 @@ class AsteroidsGame:
                 (400, 300), load_sprite("spaceship"), (0, 0)
             )
             self.asteroid = GameObject(
-                (400, 300), load_sprite("asteroid"), (1,0)
+                (400, 300), load_sprite("asteroid"), (1, 0)
             )
 
     def game_loop(self):
