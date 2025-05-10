@@ -45,4 +45,6 @@ class AsteroidsGame:
 
     def _draw(self):
         self.screen.blit(self.background, (0,0))
+        self.spaceship.draw(self.screen)
+        self.asteroid.draw(self.screen)
         pygame.display.flip()
