@@ -34,5 +34,8 @@ Minimal Viable outcome:
 3. Spawning system for asteroids, death and respawning
 4. Art and assets
 
-FOR THE RECORD: I will be basing a lot of my code off of the following tutorial, but plan to add in independent mechanics that aren't covered.
-https://www.youtube.com/watch?v=8OMghdHP-zs&t=13524s
+\\FOR THE RECORD: I will be basing a lot of my code off of the following tutorial, but plan to add in independent mechanics that aren't covered.
+https://www.youtube.com/watch?v=8OMghdHP-zs&t=13524s\\
+
+FOR THE RECORD 2: I ended up finding a different tutorial that essentially covered what I was planning to do in more depth (and in a way that's much better organized)
+https://realpython.com/asteroids-game-python/
