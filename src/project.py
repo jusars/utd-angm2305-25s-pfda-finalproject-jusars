@@ -9,13 +9,13 @@ I got way too lost :("""
 class AsteroidsGame:
     def __init__(self):
             self._init_pygame()
-            self.screen = pygame.display.set_mode(2560, 1440)
+            self.screen = pygame.display.set_mode((2560, 1440))
 
     def game_loop(self):
         while True:
                 self._handle_input()
-                self._process_game_logic()
-                self.draw()
+                self._game_logic()
+                self._draw()
 
     def _init_pygame(self):
         pygame.init()
