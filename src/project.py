@@ -23,9 +23,10 @@ class AsteroidsGame:
 
     def _handle_input(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-            elif event.type == pygame.KEYDOWN 
+            if event.type == pygame.QUIT or (
+            event.type ==pygame.KEYDOWN and event.key == pygame.K_ESCAPE
+            ):
+                pygame.quit
 
     def _game_logic(self):
         pass
