@@ -1,5 +1,5 @@
 from project import AsteroidsGame
 
 if __name__ == "__main__":
-    space_rocks = AsteroidsGame()
-    space_rocks.game_loop()
+    asteroids_game = AsteroidsGame()
+    asteroids_game.game_loop()

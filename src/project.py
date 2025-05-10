@@ -30,5 +30,3 @@ class AsteroidsGame:
     def _draw(self):
         self.screen.fill((0, 0, 255))
         pygame.display.flip()
-
-        pygame.quit()
