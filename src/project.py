@@ -22,7 +22,10 @@ class AsteroidsGame:
         pygame.display.set_caption("Legally Distinct Asteroids Game")
 
     def _handle_input(self):
-        pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            elif event.type == pygame.KEYDOWN 
 
     def _game_logic(self):
         pass
