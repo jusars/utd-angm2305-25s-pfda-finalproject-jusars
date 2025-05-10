@@ -13,9 +13,9 @@ class AsteroidsGame:
 
     def game_loop(self):
         while True:
-                self._handle_input()
-                self._game_logic()
-                self._draw()
+            self._handle_input()
+            self._game_logic()
+            self._draw()
 
     def _init_pygame(self):
         pygame.init()
