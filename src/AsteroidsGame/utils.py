@@ -2,7 +2,7 @@
 from pygame.image import load
 
 def load_sprite(name, with_alpha=True):
-    path =f"src/sprites/{name}.png"
+    path =f"sprites/{name}.png"
     loaded_sprite = load(path)
 
     if with_alpha:
