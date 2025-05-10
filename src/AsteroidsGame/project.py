@@ -18,6 +18,9 @@ class AsteroidsGame:
             self.spaceship = GameObject(
                 (400, 300), load_sprite("spaceship"), (0, 0)
             )
+            self.asteroid = GameObject(
+                (400, 300), load_sprite("asteroid"), (1,0)
+            )
 
     def game_loop(self):
         while True:
@@ -37,9 +40,9 @@ class AsteroidsGame:
                 quit()
 
     def _game_logic(self):
-        pass
+        self.spaceship.move()
+        self.asteroid.move()
 
     def _draw(self):
-        self.screen.fill((0, 0, 255))
         self.screen.blit(self.background, (0,0))
         pygame.display.flip()
