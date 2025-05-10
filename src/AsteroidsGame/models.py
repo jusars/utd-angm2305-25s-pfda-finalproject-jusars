@@ -5,3 +5,7 @@ class GameObject:
         self.position = Vector2(position)
         self.sprite = spriteself.radius = sprite.get_width() / 2
         self.velocity = Vector2(velocity)
+
+    def draw(self, surface):
+        blit_position = self.position - Vector2(self.radius)
+        surface.blit(self.sprite, blit_position)
