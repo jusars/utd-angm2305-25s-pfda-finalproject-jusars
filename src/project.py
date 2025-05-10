@@ -3,6 +3,8 @@ import math # i might want to use math
 import pygame
 from os.path import join
 
+from utils import load_sprite
+
 """starting from almost scratch unfortunately (referring to a different tutorial),
 I got way too lost :("""
 
@@ -10,6 +12,7 @@ class AsteroidsGame:
     def __init__(self):
             self._init_pygame()
             self.screen = pygame.display.set_mode((2560, 1440))
+            self.background = load_sprite("space", False)
 
     def game_loop(self):
         while True:
@@ -33,4 +36,5 @@ class AsteroidsGame:
 
     def _draw(self):
         self.screen.fill((0, 0, 255))
+        self.screen.blit(self.background, (0,0))
         pygame.display.flip()
