@@ -13,15 +13,18 @@ def gameImageLoad(imagefilepath, size):
         return image
 
 def gameWindowUpdating():
-     # bg image
-     SCREEN.blit(BGIMG, (0,0))
+     # bg image displayed in game
+     screen.blit(bg_img, (0,0))
+
+     # drawing player image in game
+     player.draw(screen)
 
      pygame.display.update()
      
 # game objects
 class Player:
      def __init__(self, coords):
-          self.img = PlayerImg
+          self.img = player_img
           self.imgRect = self.img.get_rect()
           self.x, self.y = coords
           self.width = self.img.get_width()
@@ -38,7 +41,7 @@ class Player:
 def draw(self, window):
      """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
      # letting those asteroids fly diagonally instead of just left and right
-     angle = self.direction.angle.to(vector(0, -1))
+     angle = self.direction.angle.to(Vector2(0, -1))
      rotated_img = pygame.Transform.rotozoom(self.img, angle, 1.0)
      rotated_img_size = Vector2(rotated_img.get_size())
      blit_pos = self.pos - rotated_img_size * 0.5
@@ -46,21 +49,22 @@ def draw(self, window):
 
 # game settings variables
 clock = pygame.time.Clock
-SCREENWIDTH = 2560
-SCREENHEIGHT = 1440
+screen_width = 2560
+screen_height = 1440
 object_rotation_speed = 2
 object_speed = 0.25
 
 # pygame display window
-SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
+screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("legally distinct asteroids game")
 
 # loading game assets
-BGIMG = gameImageLoad('assets/space.png', (SCREENWIDTH, SCREENHEIGHT))
-PlayerImg = gameImageLoad('assets/spaceship.png', (75, 75))
+bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
+player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 
 # one off functions (loading gameobjects, etc)
-
+    # calling player
+player = player_img((screen_width // 2, screen_height // 2))
 # game object lists
 
 # main game loop
