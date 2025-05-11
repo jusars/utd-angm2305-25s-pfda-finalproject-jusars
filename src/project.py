@@ -98,11 +98,11 @@ while running:
 
     # handling input
     keys_pressed = pygame.key.get_pressed()
-    if keys_pressed[pygame.K_LEFT] or keys_pressed[pygame.K_A]:
+    if keys_pressed[pygame.K_LEFT] or keys_pressed[pygame.K_a]:
          player.rotation(-1)
-    elif keys_pressed[pygame.K_RIGHT] or keys_pressed[pygame.K_D]:
+    elif keys_pressed[pygame.K_RIGHT] or keys_pressed[pygame.K_d]:
          player.rotation(1)
-    if keys_pressed[pygame.K_UP] or keys_pressed[pygame.K_W]:
+    if keys_pressed[pygame.K_UP] or keys_pressed[pygame.K_w]:
          player.accelerate()
 
     gameWindowUpdating()
