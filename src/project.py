@@ -86,7 +86,7 @@ class Bullet:
 
      def move(self):
           """updating bullet position"""
-          self.pos += (self.direction + self.speed)
+          self.pos += self.direction * self.speed
 
      def draw(self, window):
           """draws bullet to screen"""
