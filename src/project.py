@@ -148,4 +148,6 @@ while running:
     gameWindowUpdating()
     clock.tick(60)
 
+pygame.quit()
+sys.exit()
         
