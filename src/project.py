@@ -5,8 +5,8 @@ import random
 
 pygame.init()
 
-# utility
-"""tldr: function to load sprites (image) and resize when needed"""
+"""utility"""
+# tldr: function to load sprites (image) and resize when needed
 def gameImageLoad(imagefilepath, size):
         image = pygame.image.load(imagefilepath)
         image = pygame.transform.scale(image, (size[0], size[1]))
@@ -26,7 +26,7 @@ def gameWindowUpdating():
 
      pygame.display.update()
      
-# game objects / major classes :)
+"""game objects/ classes"""
 class Player:
       def __init__(self, coords):
           self.img = player_img
@@ -44,11 +44,11 @@ class Player:
           self.speed = object_speed
     
       def accelerate(self):
-          """increasing speed of player object"""
+          # increasing speed of player object
           self.velocity += self.direction * self.speed
 
       def rotation (self, rotation=2):
-          """accepting input for rotating player object"""
+          # accepting input for rotating player object
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
 
@@ -58,7 +58,7 @@ class Player:
            return Vector2(self.x % screen_width, self.y % screen_height)
 
       def move(self):
-          """updating player position"""
+          # updating player position
           self.pos += self.velocity
           self.pos = self._wrap_to_screen(self.pos)
           self.imgRect.x, self.imgRect.y = (self.pos[0] - self.width //2,
@@ -116,6 +116,7 @@ pygame.display.set_caption("legally distinct asteroids game")
 # loading game assets
 bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
+asteroid_img = gameImageLoad('assets/asteroids/asteroid.png', (100, 100))
 
 # one off functions (loading gameobjects, etc)
     # calling player
