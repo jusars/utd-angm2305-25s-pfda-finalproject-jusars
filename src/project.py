@@ -89,6 +89,9 @@ class Bullet:
           """updating bullet position"""
           self.pos += (self.direction * self.speed)
 
+     def _check_if_offscreen(self):
+          """checking if bullets are offscreen (and kills them)"""
+
      def draw(self, window):
           """draws bullet to screen"""
           pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1], 
