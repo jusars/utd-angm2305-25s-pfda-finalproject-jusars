@@ -86,14 +86,14 @@ class Bullet:
 
      def move(self):
           """updating bullet position"""
-          self.pos += self.direction * self.speed
+          self.pos += (self.direction * self.speed)
 
      def draw(self, window):
           """draws bullet to screen"""
-          pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1],
-                                                 self.width, self.height])
+          pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1], 
+                                                     self.width, self.height])
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
-                                             self.width, self.height)
+                                                     self.width, self.height)
 
 # game settings variables
 clock = pygame.time.Clock()
@@ -113,16 +113,16 @@ player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 # one off functions (loading gameobjects, etc)
     # calling player
 player = Player(((screen_width // 2), (screen_height // 2)))
+
 # game object lists
 playerBullets = []
+
 # main game loop
 running = True
 while running:
 
     # update game object movements
     player.move()
-for index, bullet in enumerate(playerBullets):
-    bullet.move()
 
     # exit functionality
     for event in pygame.event.get():
