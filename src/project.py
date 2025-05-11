@@ -21,6 +21,10 @@ def gameWindowUpdating():
           bullet.move()
           bullet.draw(GAMESCREEN)
 
+     for asteroid in asteroids:
+          asteroid.move()
+          asteroid.draw(GAMESCREEN)
+
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
@@ -140,6 +144,7 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 
 # game object lists
 playerBullets = []
+asteroids = [Asteroid() for _ in range(5)]
 
 # main game loop
 running = True
