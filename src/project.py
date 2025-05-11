@@ -23,7 +23,7 @@ def gameWindowUpdating():
      
 # game objects
 class Player:
-     def __init__(self, coords):
+      def __init__(self, coords):
           self.img = player_img
           self.imgRect = self.img.get_rect()
           self.x, self.y = coords
@@ -38,21 +38,25 @@ class Player:
           self.rotation_speed = object_rotation_speed
           self.speed = object_speed
     
-     def accelerate(self):
+      def accelerate(self):
           """increasing speed of player object"""
           self.velocity += self.direction * self.speed
 
-     def rotation (self, rotation=1):
+      def rotation (self, rotation=1):
           """accepting input for rotating player object"""
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
 
-     def move(self):
+      def _wrap_to_screen(self, position):
+           self.x, self.y = position
+           return Vector2(self.x % screen_width, self.y % screen_height)
+
+      def move(self):
           """updating player position"""
           self.pos += self.velocity
           self.imgRect.x, self.imgRect.y = self.pos[0] - self.width //2, self.pos[1] - self.height//2
 
-     def draw(self, window):
+      def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
         # letting those asteroids fly diagonally instead of just left and right
         angle = self.direction.angle_to(Vector2(0, -1))
