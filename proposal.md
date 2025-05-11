@@ -34,5 +34,5 @@ Minimal Viable outcome:
 3. Spawning system for asteroids, death and respawning
 4. Art and assets
 
-\\FOR THE RECORD 3: following a third, different tutorial than previously - got way too lost unfortunately! serious apologies.
+\\FOR THE RECORD 3: following a third, different tutorial than previously - got way too lost unfortunately! serious apologies. of course, there will be aesthetic and technical diffrerences from the tutorial!
 https://www.youtube.com/watch?v=1kGPcL-y028
