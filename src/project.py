@@ -14,10 +14,10 @@ def gameImageLoad(imagefilepath, size):
 
 def gameWindowUpdating():
      # bg image displayed in game
-     screen.blit(bg_img, (0,0))
+     GAMESCREEN.blit(bg_img, (0,0))
 
      # drawing player image in game
-     player.draw(screen)
+     player.draw(GAMESCREEN)
 
      pygame.display.update()
      
@@ -55,7 +55,7 @@ object_rotation_speed = 2
 object_speed = 0.25
 
 # pygame display window
-screen = pygame.display.set_mode((screen_width, screen_height))
+GAMESCREEN = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("legally distinct asteroids game")
 
 # loading game assets
