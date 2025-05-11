@@ -64,7 +64,7 @@ player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 
 # one off functions (loading gameobjects, etc)
     # calling player
-player = player_img((screen_width // 2, screen_height // 2))
+player = player_img(((screen_width // 2), (screen_height // 2)))
 # game object lists
 
 # main game loop
