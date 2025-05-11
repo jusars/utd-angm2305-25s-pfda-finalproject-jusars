@@ -13,10 +13,11 @@ def gameImageLoad(imagefilepath, size):
         return image
 
 def gameWindowUpdating():
-     # bg image displayed on screen
+     # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
 
-     for bullet in playerBullets: # drawing bullets to screen
+     # drawing bullets to screen
+     for bullet in playerBullets:
           bullet.move()
           bullet.draw(GAMESCREEN)
 
