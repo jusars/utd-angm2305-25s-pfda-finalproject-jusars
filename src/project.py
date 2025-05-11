@@ -50,6 +50,8 @@ class Player:
      def move(self):
           """updating player position"""
           self.pos += self.velocity
+          self.imgRect.x, self.imgRect.y = ((self.pos[0] - self.width//2,)
+                                            (self.pos[1] - self.height//2))
 
      def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
@@ -84,6 +86,9 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 # main game loop
 running = True
 while running:
+
+    # update game object movements
+    player.move
 
     # exit functionality
     for event in pygame.event.get():
