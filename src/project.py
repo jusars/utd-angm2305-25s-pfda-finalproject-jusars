@@ -72,14 +72,14 @@ class Player:
                                                    self.width, self.height], 1)
 
 class Bullet:
-     def __init__(self, coords, direction)
+     def __init__(self, coords, direction):
           self.width = 4
           self.height = 4
           self.pos = Vector2(coords[0], coords[1])
           self.direction = Vector2(direction[0], direction[1])
           self.velocity = Vector2()
           self.speed = 10
-          
+
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
