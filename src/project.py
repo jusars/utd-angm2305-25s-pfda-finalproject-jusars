@@ -21,10 +21,6 @@ def gameWindowUpdating():
           bullet.move()
           bullet.draw(GAMESCREEN)
 
-     for asteroid in asteroids:
-          asteroid.move()
-          asteroid.draw(GAMESCREEN)
-
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
@@ -71,7 +67,7 @@ class Player:
 
       def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
-        # letting those asteroids fly diagonally instead of just left and right
+        # letting objects fly diagonally instead of just left and right
         angle = self.direction.angle_to(Vector2(0, -1))
         rotated_img = pygame.transform.rotozoom(self.img, angle, 1.0)
         rotated_img_size = Vector2(rotated_img.get_size())
@@ -106,23 +102,7 @@ class Bullet:
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
                                                      self.width, self.height)
 
-class Asteroid:
-     def __init__(self):
-          self.img = asteroid_img
-          self.width = self.img.get_width
-          self.height = self.img.get_height
-          self.pos = Vector2(random.randint(0, screen_width), random.randint(0, screen_height))
-          self.direction = Vector2(random.uniform(-1, 1), random.uniform(-1, 1)).normalize()
-          self.speed = random.uniform(1, 3)
 
-     def move(self):
-          self.pos += (self.direction * self.speed)
-          self.pos.x %= screen_width
-          self.pos.y %= screen_height
-
-     def draw(self, window): 
-          window.blit(self.img, (self.pos.x - self.width // 2),
-                                         (self.pos.y - self.height //2))
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
@@ -137,7 +117,6 @@ pygame.display.set_caption("legally distinct asteroids game")
 # loading game assets
 bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
-asteroid_img = gameImageLoad('assets/asteroids/asteroid.png', (100, 100))
 
 # one off functions (loading gameobjects, etc)
     # calling player
@@ -145,7 +124,6 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 
 # game object lists
 playerBullets = []
-asteroids = [Asteroid() for _ in range(5)]
 
 # main game loop
 running = True
