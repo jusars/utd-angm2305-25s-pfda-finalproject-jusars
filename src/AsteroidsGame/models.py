@@ -3,10 +3,11 @@ from utils import load_sprite
 
 class GameObject:
     def __init__(self, position, sprite, velocity):
+        sprite = pygame.Surface((50, 50))
         self.position = Vector2(position)
         self.sprite = sprite
         self.radius = sprite[0] / 2
-        # self.velocity = Vector2(velocity)
+        self.velocity = Vector2(velocity)
 
     def draw(self, surface):
         blit_position = self.position - Vector2(self.radius)
