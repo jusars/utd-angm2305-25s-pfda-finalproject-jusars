@@ -19,7 +19,14 @@ def gameWindowUpdating():
      pygame.display.update()
      
 # game objects
-
+class Player:
+     def __init__(self, coords):
+          self.img = PlayerImg
+          self.imgRect = self.img.get_rect()
+          self.x, self.y = coords
+          self.width = sekf.img.get_width()
+          self.height = self.img.get_height()
+          
 # game settings variables
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
@@ -31,6 +38,7 @@ pygame.display.set_caption("legally distinct asteroids game")
 
 # loading game assets
 BGIMG = gameImageLoad('assets/space.png', (SCREENWIDTH, SCREENHEIGHT))
+PlayerImg = gameImageLoad('assets/spaceship.png', (75, 75))
 
 # one off functions (loading gameobjects, etc)
 
