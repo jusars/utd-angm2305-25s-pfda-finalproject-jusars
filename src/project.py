@@ -26,7 +26,9 @@ class Player:
           self.x, self.y = coords
           self.width = self.img.get_width()
           self.height = self.img.get_height()
+          # centering rectangle to image
           self.imgRect.x = self.x - self.width // 2
+          self.imgRect.y = self.y - self.height // 2
 # game settings variables
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
