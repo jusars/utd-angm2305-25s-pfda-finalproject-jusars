@@ -20,6 +20,10 @@ SCREENHEIGHT = 1440
 # pygame display window
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 pygame.display.set_caption("legally distinct asteroids game")
+iconImg = gameimageload('assets/spaceship.png', (20, 20))
+iconImg = pygame.transform.rotate(iconImg, -90)
+pygame.display.set_icon(iconImg)
+
 # loading game assets
 
 # one off functions (loading gameobjects, etc)
