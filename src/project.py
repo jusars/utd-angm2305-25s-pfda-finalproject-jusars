@@ -91,7 +91,8 @@ class Bullet:
 
      def check_if_offscreen(self):
           """checking if bullets are offscreen (to be killed later)"""
-          if (self.pos[0] < 0 or self.pos[0] < screen_width) or (self.pos[1] < 0 or self.pos[1] > screen_height):
+          if (self.pos[0] < 0 or self.pos[0] < screen_width or
+               self.pos[1] < 0 or self.pos[1] < screen_height):
                return True
           
      def draw(self, window):
