@@ -16,6 +16,9 @@ def gameWindowUpdating():
      # bg image displayed on screen
      GAMESCREEN.blit(bg_img, (0,0))
 
+     for bullet in playerBullets: # drawing bullets to screen
+          bullet.draw(GAMESCREEN)
+
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
@@ -82,13 +85,13 @@ class Bullet:
 
      def move(self):
           """updating bullet position"""
-     self.pos += (self.direction + self.speed)
+          self.pos += (self.direction + self.speed)
 
      def draw(self, window):
           """draws bullet to screen"""
-     pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1],
+          pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1],
                                                  self.width, self.height])
-     self.bulletRect = pygame.rect.Rect(int(self.pos[0], int(self.pos[1]),
+          self.bulletRect = pygame.rect.Rect(int(self.pos[0], int(self.pos[1]),
                                              self.width, self.height))
 
 # game settings variables
@@ -117,6 +120,8 @@ while running:
 
     # update game object movements
     player.move()
+for index, bullet in enumerate(playerBullets):
+    bullet.move
 
     # exit functionality
     for event in pygame.event.get():
@@ -125,7 +130,7 @@ while running:
         ):
             running = False
           if event.key == pygame.K_SPACE:
-               playerBullets.append(Bullet(player.pos, player.direction))
+               playerBullets.append(Bullet(player.pos,))
 
     # handling input
     keys_pressed = pygame.key.get_pressed()
