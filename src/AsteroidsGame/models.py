@@ -5,6 +5,7 @@ class GameObject:
     def __init__(self, position, sprite, velocity):
         self.position = Vector2(position)
         self.sprite = sprite
+        print(f"sprite: {sprite}, type: {type(sprite)}")
         self.radius = sprite.get_height() / 2
         self.velocity = Vector2(velocity)
 
