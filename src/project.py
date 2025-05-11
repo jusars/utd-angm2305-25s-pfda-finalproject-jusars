@@ -47,6 +47,10 @@ class Player:
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
 
+     def move(self):
+          """updating player position"""
+          self.pos += self.velocity
+
      def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
         # letting those asteroids fly diagonally instead of just left and right
@@ -55,6 +59,8 @@ class Player:
         rotated_img_size = Vector2(rotated_img.get_size())
         blit_pos = self.pos - rotated_img_size * 0.5
         window.blit(rotated_img, blit_pos)
+        pygame.draw.rect(window, [255, 255, 255], [self.imgRect.x, self.imgRect.y,
+                                                   self.width, self.height], 1)
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
