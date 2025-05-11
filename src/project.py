@@ -17,6 +17,7 @@ def gameWindowUpdating():
      GAMESCREEN.blit(bg_img, (0,0))
 
      for bullet in playerBullets: # drawing bullets to screen
+          bullet.move()
           bullet.draw(GAMESCREEN)
 
      # drawing player image on screen
@@ -121,7 +122,7 @@ while running:
     # update game object movements
     player.move()
 for index, bullet in enumerate(playerBullets):
-    bullet.move
+    bullet.move()
 
     # exit functionality
     for event in pygame.event.get():
