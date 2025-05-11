@@ -38,6 +38,14 @@ class Player:
           self.rotation_speed = object_rotation_speed
           self.speed = object_speed
     
+     def accelerate(self):
+          """increasing speed of player object"""
+          self.velocity += self.direction * self.speed
+
+     def rotation (self, rotation=1):
+          """accepting input for rotating player object"""
+          angle = self.rotation_speed * rotation
+          self.direction.rotate_ip(angle)
 
      def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
@@ -47,7 +55,6 @@ class Player:
         rotated_img_size = Vector2(rotated_img.get_size())
         blit_pos = self.pos - rotated_img_size * 0.5
         window.blit(rotated_img, blit_pos)
-
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
