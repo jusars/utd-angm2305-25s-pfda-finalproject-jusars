@@ -21,7 +21,7 @@ def gameWindowUpdating():
 
      pygame.display.update()
      
-# game objects
+# game objects / major classes :)
 class Player:
       def __init__(self, coords):
           self.img = player_img
@@ -70,6 +70,16 @@ class Player:
         window.blit(rotated_img, blit_pos)
         pygame.draw.rect(window, [255, 255, 255], [self.imgRect.x, self.imgRect.y,
                                                    self.width, self.height], 1)
+
+class Bullet:
+     def __init__(self, coords, direction)
+          self.width = 4
+          self.height = 4
+          self.pos = Vector2(coords[0], coords[1])
+          self.direction = Vector2(direction[0], direction[1])
+          self.velocity = Vector2()
+          self.speed = 10
+          
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
