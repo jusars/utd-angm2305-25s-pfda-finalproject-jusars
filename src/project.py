@@ -47,6 +47,11 @@ class Player:
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
 
+     def _screen_wrap(self):
+         """wraps player around the screen!! i love asteroids"""
+         self.x, self.y = position
+         
+
      def move(self):
           """updating player position"""
           self.pos += self.velocity
