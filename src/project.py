@@ -13,7 +13,7 @@ pygame.init()
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
 # pygame display window
-SCREEN = pygame.display.set_mode(SCREENWIDTH, SCREENHEIGHT)
+SCREEN = pygame.display.set_mode(2560, 1440)
 pygame.display.set_caption("legally distinct asteroids game")
 # loading game assets
 
