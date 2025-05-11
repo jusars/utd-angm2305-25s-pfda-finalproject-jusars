@@ -132,7 +132,7 @@ while running:
             event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
         ):
             running = False
-          if event.key == pygame.K_SPACE:
+          if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                playerBullets.append(Bullet(player.pos, player.direction))
 
     # handling input
