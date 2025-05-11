@@ -92,8 +92,8 @@ class Bullet:
           """draws bullet to screen"""
           pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1],
                                                  self.width, self.height])
-          self.bulletRect = pygame.rect.Rect(int(self.pos[0], int(self.pos[1]),
-                                             self.width, self.height))
+          self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
+                                             self.width, self.height)
 
 # game settings variables
 clock = pygame.time.Clock()
@@ -131,7 +131,7 @@ for index, bullet in enumerate(playerBullets):
         ):
             running = False
           if event.key == pygame.K_SPACE:
-               playerBullets.append(Bullet(player.pos,))
+               playerBullets.append(Bullet(player.pos, player.direction))
 
     # handling input
     keys_pressed = pygame.key.get_pressed()
