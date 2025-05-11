@@ -47,14 +47,15 @@ class Player:
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
 
-     def _screen_wrap(self):
+     def _screen_wrap(self, position):
          """wraps player around the screen!! i love asteroids"""
          self.x, self.y = position
+         return Vector2(self.x % screen_width, self.y % screen_height)
          
 
      def move(self):
           """updating player position"""
-          self.pos += self.velocity
+          self.pos += self._screen_wrap(self.pos + self.velocity)
           self.imgRect.x, self.imgRect.y = self.pos[0] - self.width //2, self.pos[1] - self.height//2
 
      def draw(self, window):
