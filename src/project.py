@@ -13,10 +13,10 @@ def gameImageLoad(imagefilepath, size):
         return image
 
 def gameWindowUpdating():
-     # bg image displayed in game
+     # bg image displayed on screen
      GAMESCREEN.blit(bg_img, (0,0))
 
-     # drawing player image in game
+     # drawing player image on screen
      player.draw(GAMESCREEN)
 
      pygame.display.update()
@@ -42,14 +42,14 @@ class Player:
      def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
         # letting those asteroids fly diagonally instead of just left and right
-        angle = self.direction.angle.to(Vector2(0, -1))
-        rotated_img = pygame.Transform.rotozoom(self.img, angle, 1.0)
+        angle = self.direction.angle_to(Vector2(0, -1))
+        rotated_img = pygame.transform.rotozoom(self.img, angle, 1.0)
         rotated_img_size = Vector2(rotated_img.get_size())
         blit_pos = self.pos - rotated_img_size * 0.5
         window.blit(rotated_img, blit_pos)
 
 # game settings variables
-clock = pygame.time.Clock
+clock = pygame.time.Clock()
 screen_width = 2560
 screen_height = 1440
 object_rotation_speed = 2
