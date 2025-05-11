@@ -29,10 +29,18 @@ class Player:
           # centering rectangle to image
           self.imgRect.x = self.x - self.width // 2
           self.imgRect.y = self.y - self.height // 2
+          self.pos = Vector2(self.imgRect.x, self.imgRect.y)
+          self.direction = Vector2(0, -1)
+          self.velocity = Vector2()
+          self.rotation_speed = object_rotation_speed
+          self.speed = object_speed
+
 # game settings variables
+clock = pygame.time.Clock
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
-clock = pygame.time.Clock
+object_rotation_speed = 2
+object_speed = 0.25
 
 # pygame display window
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
