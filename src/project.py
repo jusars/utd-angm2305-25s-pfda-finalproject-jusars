@@ -6,6 +6,11 @@ import random
 pygame.init()
 
 # utility
+"""tldr: function to load sprites (image) and resize when needed"""
+def gameimageload(imagefilepath, size):
+        image = pygame.image.load(imagefilepath)
+        image = pygame.transform.scale(image, (size[0], size[1]))
+        return image
 
 # game objects
 
