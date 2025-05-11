@@ -87,7 +87,7 @@ running = True
 while running:
 
     # update game object movements
-    player.move
+    player.move()
 
     # exit functionality
     for event in pygame.event.get():
