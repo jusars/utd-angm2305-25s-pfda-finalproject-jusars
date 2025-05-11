@@ -36,11 +36,13 @@ class Player:
           self.speed = object_speed
 
 def draw(self, window):
-     """tldr: alters/ accepts image rotation and latest coordinates, then blips"""
+     """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
      # letting those asteroids fly diagonally instead of just left and right
      angle = self.direction.angle.to(vector(0, -1))
      rotated_img = pygame.Transform.rotozoom(self.img, angle, 1.0)
      rotated_img_size = Vector2(rotated_img.get_size())
+     blit_pos = self.pos - rotated_img_size * 0.5
+     window.blit(rotated_img, blit_pos)
 
 # game settings variables
 clock = pygame.time.Clock
