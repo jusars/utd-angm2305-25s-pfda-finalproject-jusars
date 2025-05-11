@@ -120,7 +120,8 @@ class Asteroid:
           self.pos.x %= screen_width
           self.pos.y %= screen_height
 
-     def draw(self, window): window.blit(self.img, (self.pos.x - self.width // 2),
+     def draw(self, window): 
+          window.blit(self.img, (self.pos.x - self.width // 2),
                                          (self.pos.y - self.height //2))
 # game settings variables
 clock = pygame.time.Clock()
