@@ -24,9 +24,9 @@ class Player:
           self.img = PlayerImg
           self.imgRect = self.img.get_rect()
           self.x, self.y = coords
-          self.width = sekf.img.get_width()
+          self.width = self.img.get_width()
           self.height = self.img.get_height()
-          
+          self.imgRect.x = self.x - self.width // 2
 # game settings variables
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
