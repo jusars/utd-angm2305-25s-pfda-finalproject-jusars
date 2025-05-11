@@ -80,6 +80,10 @@ class Bullet:
           self.velocity = Vector2()
           self.speed = 10
 
+     def draw(self, window):
+          """draws bullet to screen"""
+     pygame.draw.rect(window, (255, 255, 255), [self.pos[0], self.pos[1], self.width, self.height]) 
+
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
