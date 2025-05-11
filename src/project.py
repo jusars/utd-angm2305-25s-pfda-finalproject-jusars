@@ -22,14 +22,14 @@ pygame.display.set_caption("legally distinct asteroids game")
 # game object lists
 
 # main game loop
-RUNGAME = True
-while RUNGAME:
+running = True
+while running:
 
     # exit functionality
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (
             event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
         ):
-            RUNGAME = False
+            running = False
 
         
