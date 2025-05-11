@@ -42,7 +42,7 @@ class Player:
           """increasing speed of player object"""
           self.velocity += self.direction * self.speed
 
-      def rotation (self, rotation=1):
+      def rotation (self, rotation=2):
           """accepting input for rotating player object"""
           angle = self.rotation_speed * rotation
           self.direction.rotate_ip(angle)
