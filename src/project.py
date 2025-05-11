@@ -96,6 +96,15 @@ while running:
         ):
             running = False
 
+    # handling input
+    keys_pressed = pygame.key.get_pressed()
+    if keys_pressed[pygame.K_LEFT] or keys_pressed[pygame.K_A]:
+         player.rotation(-1)
+    elif keys_pressed[pygame.K_RIGHT] or keys_pressed[pygame.K_D]:
+         player.rotation(1)
+    if keys_pressed[pygame.K_UP] or keys_pressed[pygame.K_W]:
+         player.accelerate()
+
     gameWindowUpdating()
     clock.tick(60)
 
