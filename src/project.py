@@ -110,6 +110,14 @@ class Asteroid:
           self.pos = Vector2(random.randint(0, screen_width), random.randint(0, screen_height))
           self.direction = Vector2(random.uniform(-1, 1), random.uniform(-1, 1)).normalize()
           self.speed = random.uniform(1, 3)
+
+     def move(self):
+          self.pos += (self.direction * self.speed)
+          self.pos.x %= screen_width
+          self.pos.y %= screen_height
+
+     def draw(self, window): window.blit(self.img, (self.pos.x - self.width // 2),
+                                         (self.pos.y - self.height //2))
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
