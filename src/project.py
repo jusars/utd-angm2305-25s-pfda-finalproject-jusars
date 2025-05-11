@@ -102,6 +102,12 @@ class Bullet:
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
                                                      self.width, self.height)
 
+class Asteroid:
+     def __init__(self):
+          self.img = asteroid_img
+          self.width = self.img.get_width
+          self.height = self.img.get_height
+          self.pos = Vector2()
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
