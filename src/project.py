@@ -48,6 +48,7 @@ class Player:
           self.direction.rotate_ip(angle)
 
       def _wrap_to_screen(self, position):
+           # wrapping around screen so player doesn't get lost perpetually
            self.x, self.y = position
            return Vector2(self.x % screen_width, self.y % screen_height)
 
@@ -55,7 +56,9 @@ class Player:
           """updating player position"""
           self.pos += self.velocity
           self.pos = self._wrap_to_screen(self.pos)
-          self.imgRect.x, self.imgRect.y = self.pos[0] - self.width //2, self.pos[1] - self.height//2
+          self.imgRect.x, self.imgRect.y = (self.pos[0] - self.width //2,
+                                             self.pos[1] - self.height//2)
+          self.velocity *= 0.99 # adding friction (sort of)
 
       def draw(self, window):
         """tldr: alters/ accepts image rotation and latest coordinates, then blits"""
