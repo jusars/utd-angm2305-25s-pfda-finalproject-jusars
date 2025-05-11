@@ -23,6 +23,8 @@ def gameWindowUpdating():
 # game settings variables
 SCREENWIDTH = 2560
 SCREENHEIGHT = 1440
+clock = pygame.time.Clock
+
 # pygame display window
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 pygame.display.set_caption("legally distinct asteroids game")
@@ -46,5 +48,6 @@ while running:
             running = False
 
     gameWindowUpdating()
+    clock.tick(60)
 
         
