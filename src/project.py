@@ -53,7 +53,7 @@ class Player:
 
       def move(self):
           """updating player position"""
-          self.pos += self.velocity
+          self.pos += self._wrap_to_screen(self.pos + self.velocity)
           self.imgRect.x, self.imgRect.y = self.pos[0] - self.width //2, self.pos[1] - self.height//2
 
       def draw(self, window):
