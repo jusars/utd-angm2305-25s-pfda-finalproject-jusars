@@ -107,7 +107,9 @@ class Asteroid:
           self.img = asteroid_img
           self.width = self.img.get_width
           self.height = self.img.get_height
-          self.pos = Vector2()
+          self.pos = Vector2(random.randint(0, screen_width), random.randint(0, screen_height))
+          self.direction = Vector2(random.uniform(-1, 1), random.uniform(-1, 1)).normalize()
+          self.speed = random.uniform(1, 3)
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
