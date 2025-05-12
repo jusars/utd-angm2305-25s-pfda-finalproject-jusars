@@ -46,6 +46,9 @@ def generate_random_location():
           asteroidLocation = Vector2(asteroidPosX, asteroidPosY)
           if asteroidLocation.distance_to(player.pos) >= 100:
                validLocation = True
+          else:
+               continue
+     return asteroidLocation
 
 def gameWindowUpdating():
      # drawing bg image to screen
@@ -145,6 +148,10 @@ class Asteroid(Player):
           self.size = size
           self.x, self.y = (generate_random_location()
                              if self.size == 'large'else coords)
+          self.imgSet = (self._generate_random_image_set() if not imgSet
+                          else imgSet)
+     
+     def _generate_random_image_set(self):
 
 
 # game settings variables
