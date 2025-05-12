@@ -117,6 +117,7 @@ pygame.display.set_caption("legally distinct asteroids game")
 # loading game assets
 bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
+AsteroidImgA = {'large': [], 'medium': [], 'small': []}
 
 # one off functions (loading gameobjects, etc)
     # calling player
