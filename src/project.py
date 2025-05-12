@@ -35,6 +35,17 @@ def asteroidImageLoading():
                                                  (f'assets/asteroids/{imgSize}/{item}',
                                                                (imgSpriteSize, imgSpriteSize)))
 
+def generate_random_location():
+     """generating random spawn locations for asteroids
+     a certain distance away from player char"""
+     playerPosX, playerPosY = player.pos
+     validLocation = False
+     while not validLocation:
+          asteroidPosX = random.randrange(0, screen_width)
+          asteroidPosY = random.randrange(0, screen_height)
+          asteroidLocation = Vector2(asteroidPosX, asteroidPosY)
+          if asteroidLocation
+
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
@@ -131,8 +142,9 @@ class Asteroid(Player):
      def __init__(self, size, coords=(0, 0), imgSet=None):
           super().__init__(coords)
           self.size = size
-          self.x, self.y = generate_random_location
-          
+          self.x, self.y = (generate_random_location()
+                             if self.size == 'large'else coords)
+
 
 # game settings variables
 clock = pygame.time.Clock()
