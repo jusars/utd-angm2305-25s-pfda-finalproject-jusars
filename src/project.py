@@ -44,7 +44,8 @@ def generate_random_location():
           asteroidPosX = random.randrange(0, screen_width)
           asteroidPosY = random.randrange(0, screen_height)
           asteroidLocation = Vector2(asteroidPosX, asteroidPosY)
-          if asteroidLocation
+          if asteroidLocation.distance_to(player.pos) >= 100:
+               validLocation = True
 
 def gameWindowUpdating():
      # drawing bg image to screen
