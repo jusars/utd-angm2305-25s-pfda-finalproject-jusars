@@ -34,6 +34,7 @@ def asteroidImageLoading():
                     AsteroidImgA[imgSize].append(gameImageLoad
                                                  (f'assets/asteroids/{imgSize}/{item}',
                                                                (imgSpriteSize, imgSpriteSize)))
+
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
@@ -98,6 +99,7 @@ class Player:
         pygame.draw.rect(window, [255, 255, 255], [self.imgRect.x, self.imgRect.y,
                                                    self.width, self.height], 1)
 
+
 class Bullet:
      def __init__(self, coords, direction):
           self.width = 4
@@ -125,6 +127,13 @@ class Bullet:
                                                      self.width, self.height)
 
 
+class Asteroid(Player):
+     def __init__(self, size, coords=(0, 0), imgSet=None):
+          super().__init__(coords)
+          self.size = size
+          self.x, self.y = generate_random_location
+          
+
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
@@ -132,22 +141,28 @@ screen_height = 1440
 object_rotation_speed = 2
 object_speed = 0.25
 
+
 # pygame display window
 GAMESCREEN = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("legally distinct asteroids game")
+
 
 # loading game assets
 bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 AsteroidImgA = {'large': [], 'medium': [], 'small': []}
 
+
 # one off functions (loading gameobjects, etc)
-    # calling player
+    # loading asteroids
 asteroidImageLoading()
+     # calling the player
 player = Player(((screen_width // 2), (screen_height // 2)))
+
 
 # game object lists
 playerBullets = []
+
 
 # main game loop
 running = True
