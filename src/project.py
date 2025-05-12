@@ -121,6 +121,7 @@ AsteroidImgA = {'large': [], 'medium': [], 'small': []}
 
 # one off functions (loading gameobjects, etc)
     # calling player
+asteroidImageLoading()
 player = Player(((screen_width // 2), (screen_height // 2)))
 
 # game object lists
