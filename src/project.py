@@ -5,13 +5,27 @@ import random
 
 pygame.init()
 
-"""utility"""
+"""utility functions"""
 # tldr: function to load sprites (image) and resize when needed
 def gameImageLoad(imagefilepath, size):
         image = pygame.image.load(imagefilepath)
         image = pygame.transform.scale(image, (size[0], size[1]))
         return image
 
+def asteroidImageLoading():
+     # function for loading all the asteroid images + resize when needed
+     large = 200
+     medium =  125
+     small = 75
+     for imgSize in ['large', 'medium', 'small']:
+          if imgSize == 'large':
+               imgSpriteSize = large
+          elif imgSize == 'medium':
+               imgSpriteSize = medium
+          else:
+               imgSpriteSize = small
+          for item in os.listdir(f'assets/asteroids/{imgSize}')
+               
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
