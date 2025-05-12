@@ -24,8 +24,16 @@ def asteroidImageLoading():
                imgSpriteSize = medium
           else:
                imgSpriteSize = small
-          for item in os.listdir(f'assets/asteroids/{imgSize}')
-               
+          for item in os.listdir(f'assets/asteroids/{imgSize}'):
+               if str(item)[:2] == 'a1':
+                    AsteroidImgA[imgSize].append(gameImageLoad
+                                                 (f'assets/asteroids/{imgSize}/{item}',
+                                                               (imgSpriteSize, imgSpriteSize)))
+          for item in os.listdir(f'assets/asteroids/{imgSize}'):
+               if str(item)[:2] == 'a3':
+                    AsteroidImgA[imgSize].append(gameImageLoad
+                                                 (f'assets/asteroids/{imgSize}/{item}',
+                                                               (imgSpriteSize, imgSpriteSize)))
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
