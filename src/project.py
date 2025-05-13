@@ -199,8 +199,8 @@ class Player:
         rotated_img_size = Vector2(rotated_img.get_size())
         blit_pos = self.pos - rotated_img_size * 0.5
         window.blit(rotated_img, blit_pos)
-        pygame.draw.rect(window, [255, 255, 255], [self.imgRect.x, self.imgRect.y,
-                                                   self.width, self.height], 1)
+       #pygame.draw.rect(window, [255, 255, 255], [self.imgRect.x, self.imgRect.y,
+       #                                           self.width, self.height], 1)
 
 
 class Bullet:
@@ -224,8 +224,8 @@ class Bullet:
           
      def draw(self, window):
           """draws bullet to screen"""
-          pygame.draw.rect(window, (177, 220, 230), [self.pos[0], self.pos[1], 
-                                                     self.width, self.height])
+     #    pygame.draw.rect(window, (177, 220, 230), [self.pos[0], self.pos[1], 
+     #                                               self.width, self.height])
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
                                                      self.width, self.height)
 
