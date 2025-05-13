@@ -302,7 +302,8 @@ player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 AsteroidImgA = {'large': [], 'medium': [], 'small': []}
 AsteroidImgB = {'large': [], 'medium': [], 'small': []}
 shootSound = pygame.mixer.Sound('assets/sounds/laser.wav')
-explSound = pygame.mixer.Sound('assets/sounds/bangSmall.wav')
+smallExplSound = pygame.mixer.Sound('assets/sounds/bangSmall.wav')
+largeExplSound = pygame.mixer.Sound('assets/sounds/bangLarge.wav')
 shipExplSound = pygame.mixer.Sound('assets/sounds/explosion.wav')
 # one off functions (loading gameobjects, etc)
     # loading asteroids
@@ -341,15 +342,19 @@ while running:
                          score += asteroidObject.score
                          if asteroidObject.health == 0:
                               if asteroidObject.size == 'large':
+                                   largeExplSound.play()
                                    asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
                                                                  asteroidObject.imgSet))
                                    asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
                                                                  asteroidObject.imgSet))
                               elif asteroidObject.size == 'medium':
+                                   smallExplSound.play()
                                    asteroidObjects.append(Asteroid('small', asteroidObject.pos,
                                                                  asteroidObject.imgSet))
                                    asteroidObjects.append(Asteroid('small', asteroidObject.pos,
                                                                  asteroidObject.imgSet))
+                              elif asteroidObject.size == 'small':
+                                   smallExplSound.play()
                               del asteroidObjects[ind]
                          del playerBullets[index]
                          break
@@ -371,6 +376,7 @@ while running:
             running = False
           if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                playerBullets.append(Bullet(player.pos, player.direction))
+               shootSound.play()
           if gameover:
                if event.key == pygame.K_TAB:
                     resetAfterLosingLife()
