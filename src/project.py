@@ -244,7 +244,7 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 playerBullets = []
 asteroidObjects = []
 
-# main game loop
+"""MAIN GAME LOOP"""
 running = True
 while running:
 
@@ -256,6 +256,9 @@ while running:
          # check to see if bullet is offscreen (and kills it)
          if bullet.check_if_offscreen():
               del playerBullets[index]
+
+    for ind, asteroidObject in enumerate(asteroidObjects):
+         asteroidObject.move()
 
     # exit functionality + other inputs
     for event in pygame.event.get():
