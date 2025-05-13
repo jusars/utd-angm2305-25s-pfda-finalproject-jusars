@@ -163,6 +163,10 @@ class Asteroid(Player):
           self.speed = random.randrange(3, 6)
           self.imgInd = 0
           self.animate_speed = random.randrange(3, 7)
+          # tldr: large asteroid: 3 hits, medium : 2 hits, small: 1 hit
+          self.health = (3 if self.size == 'large' else 2
+                         if self.size == 'medium' else 1)
+        
      
      def _generate_random_image_set(self):
           if self.size == 'large':
