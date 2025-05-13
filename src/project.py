@@ -56,6 +56,7 @@ def stage_progression():
      global stage
      if len(asteroidObjects) == 0:
           stage += 1
+          generate_asteroids()
 
 def generate_asteroids():
      """generates asteroids corresponding to lvl"""
