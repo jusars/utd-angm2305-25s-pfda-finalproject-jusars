@@ -95,7 +95,12 @@ def gameWindowUpdating():
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
-     pygame.display.update()
+     playerLives = textScreen(f'Player Lives: {str(lives)}')
+     GAMESCREEN.blit(playerLives, (25, 25))
+     stage = textScreen(f'STAGE: {str:(stage)}')
+     GAMESCREEN.blit(stage, (25, 25 + playerLives.get_height() + 10))
+
+pygame.display.update()
 
 
 """game objects/ classes"""
