@@ -244,6 +244,8 @@ asteroidObjects = []
 running = True
 while running:
 
+    stage_progression()
+
     # update game object movements
     player.move()
     for index, bullet in enumerate(playerBullets):
