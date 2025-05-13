@@ -62,7 +62,11 @@ def resetAfterLosingLife():
      """resetting player to mid. of screen + move
      asteroids to new locations after player is hit."""
      player.pos = (screen_width // 2, screen_height // 2)
-
+     player.direction = Vector2(0, -1)
+     player.velocity = Vector2()
+     playerBullets.clear()
+     if not gameover:
+          
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
