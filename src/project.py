@@ -175,7 +175,7 @@ class Asteroid(Player):
           self.height = self.img.get_height() // 2
           self.imgRect.x = self.x - self.width // 2
           self.imgRect.y = self.y - self.height // 2
-          self.imgRect = pygame.rext.Rect(self.imgRect.x, self.imgRect.y,
+          self.imgRect = pygame.rect.Rect(self.imgRect.x, self.imgRect.y,
                                           self.width, self.height)
           self.direction = Vector2(random.randrange(-100, 100)/100,
                                    random.randrange(-100, 100)/100)
