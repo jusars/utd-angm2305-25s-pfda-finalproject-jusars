@@ -58,7 +58,7 @@ def stage_progression():
           stage += 1
 
 def generate_asteroids():
-     """generates 3 asteroids per level"""
+     """generates asteroids corresponding to lvl"""
      for _ in range(stage):
           asteroidObjects.append(Asteroid('large'))
 
