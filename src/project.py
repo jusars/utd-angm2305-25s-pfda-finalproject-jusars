@@ -72,6 +72,12 @@ def resetAfterLosingLife():
      else:
           asteroidObjects.clear
 
+def textScreen(message):
+     """ putting text on the screen"""
+     font = pygame.font.SysFont('comicsans', 40)
+     displayText = font.render(message, 1, (255, 255, 255))
+     return displayText
+
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
