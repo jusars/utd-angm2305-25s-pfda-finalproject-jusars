@@ -50,6 +50,13 @@ def generate_random_location():
                continue
      return asteroidLocation
 
+def check_roidcount_increase_stage():
+     """long function sorry
+     checks # of asteroids on screen, increases stage level when no asteroids"""
+     global stage
+     if l
+
+
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
@@ -63,7 +70,8 @@ def gameWindowUpdating():
      player.draw(GAMESCREEN)
 
      pygame.display.update()
-     
+
+
 """game objects/ classes"""
 class Player:
       def __init__(self, coords):
@@ -193,13 +201,15 @@ class Asteroid(Player):
                self.imgInd = 0
                self.imgIndex = 0
           self.img = self.imgSet[self.size][self.imgIndex]
-          
+
+
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
 screen_height = 1440
 object_rotation_speed = 2
 object_speed = 0.25
+stage = 0
 
 
 # pygame display window
