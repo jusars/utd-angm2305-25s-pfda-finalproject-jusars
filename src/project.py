@@ -70,7 +70,7 @@ def resetAfterLosingLife():
                asteroidObject.pos = generate_random_location()
           pygame.time.wait(3000)
      else:
-          asteroidObjects.clear
+          asteroidObjects.clear()
 
 def textScreen(message):
      """ putting text on the screen"""
@@ -97,7 +97,7 @@ def gameWindowUpdating():
 
      playerLives = textScreen(f'Player Lives: {str(lives)}')
      GAMESCREEN.blit(playerLives, (25, 25))
-     stage = textScreen(f'STAGE: {str:(stage)}')
+     stage = textScreen(f'STAGE: {str(stage)}')
      GAMESCREEN.blit(stage, (25, 25 + playerLives.get_height() + 10))
 
      pygame.display.update()
