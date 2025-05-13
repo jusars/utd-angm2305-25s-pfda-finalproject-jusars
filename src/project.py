@@ -29,8 +29,7 @@ def asteroidImageLoading():
                     AsteroidImgA[imgSize].append(gameImageLoad
                                                  (f'assets/asteroids/{imgSize}/{item}',
                                                                (imgSpriteSize, imgSpriteSize)))
-          for item in os.listdir(f'assets/asteroids/{imgSize}'):
-               if str(item)[:2] == 'a3':
+               elif str(item)[:2] == 'a3':
                     AsteroidImgA[imgSize].append(gameImageLoad
                                                  (f'assets/asteroids/{imgSize}/{item}',
                                                                (imgSpriteSize, imgSpriteSize)))
