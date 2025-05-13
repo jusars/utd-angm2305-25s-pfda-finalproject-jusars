@@ -100,7 +100,7 @@ def gameWindowUpdating():
      stage = textScreen(f'STAGE: {str:(stage)}')
      GAMESCREEN.blit(stage, (25, 25 + playerLives.get_height() + 10))
 
-pygame.display.update()
+     pygame.display.update()
 
 
 """game objects/ classes"""
