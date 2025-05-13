@@ -161,6 +161,8 @@ class Asteroid(Player):
           self.direction = Vector2(random.randrange(-100, 100)/100,
                                    random.randrange(-100, 100)/100)
           self.speed = random.randrange(3, 6)
+          self.imgInd = 0
+          self.animate_speed = random.randrange(3, 7)
      
      def _generate_random_image_set(self):
           if self.size == 'large':
