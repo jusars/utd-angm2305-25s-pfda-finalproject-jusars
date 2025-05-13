@@ -385,6 +385,7 @@ while running:
                     lives = 3
                     generate_asteroids()
                     gameover = False
+                    pygame.time.wait(60000)
 
     # handling inputs that are held down
     keys_pressed = pygame.key.get_pressed()
@@ -398,6 +399,5 @@ while running:
     gameWindowUpdating()
     clock.tick(60)
 
-pygame.time.wait(60000)
 pygame.quit()
 sys.exit()
