@@ -14,9 +14,9 @@ def gameImageLoad(imagefilepath, size):
 
 def asteroidImageLoading():
      # function for loading all the asteroid images + resize when needed
-     large = 200
-     medium =  125
-     small = 75
+     large = 500
+     medium =  250
+     small = 100
      for imgSize in ['large', 'medium', 'small']:
           if imgSize == 'large':
                imgSpriteSize = large
