@@ -253,6 +253,8 @@ while running:
     for ind, asteroidObject in enumerate(asteroidObjects):
          asteroidObject.move()
 
+          for index, bullet in enumerate(playerBullets):
+              if bullet.bulletRect.collide
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
