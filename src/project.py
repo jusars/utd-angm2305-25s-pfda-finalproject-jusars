@@ -211,7 +211,10 @@ screen_height = 1440
 object_rotation_speed = 2
 object_speed = 0.25
 stage = 0
-
+lives = 3
+gameover = False
+score = 0
+topscore = None
 
 # pygame display window
 GAMESCREEN = pygame.display.set_mode((screen_width, screen_height))
@@ -256,7 +259,7 @@ while running:
           for index, bullet in enumerate(playerBullets):
                if bullet.bulletRect.colliderect(asteroidObject.imgRect):
                     asteroidObject.health -= 1
-                    
+          
 
     # exit functionality + other inputs
     for event in pygame.event.get():
