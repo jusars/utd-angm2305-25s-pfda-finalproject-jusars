@@ -13,6 +13,11 @@ def openTopScoreFile():
      file.close()
      return topScore
 
+def saveTopScore():
+     global topscore
+     if score > topscore:
+          topscore = score
+          
 
 def gameImageLoad(imagefilepath, size):
         image = pygame.image.load(imagefilepath)
