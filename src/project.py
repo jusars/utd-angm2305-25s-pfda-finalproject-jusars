@@ -50,11 +50,14 @@ def generate_random_location():
                continue
      return asteroidLocation
 
-def check_roidcount_increase_stage():
+def stage_progression():
      """long function sorry
      checks # of asteroids on screen, increases stage level when no asteroids"""
      global stage
-     if l
+     if len(asteroidObjects) == 0:
+          stage += 1
+
+def 
 
 
 def gameWindowUpdating():
@@ -232,7 +235,7 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 
 # game object lists
 playerBullets = []
-
+asteroidobjects = []
 
 # main game loop
 running = True
