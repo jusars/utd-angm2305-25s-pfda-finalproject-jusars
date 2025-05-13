@@ -97,8 +97,8 @@ def gameWindowUpdating():
 
      playerLives = textScreen(f'Player Lives: {str(lives)}')
      GAMESCREEN.blit(playerLives, (25, 25))
-     stage = textScreen(f'STAGE: {str(stage)}')
-     GAMESCREEN.blit(stage, (25, 25 + playerLives.get_height() + 10))
+     stage_text = textScreen(f'STAGE: {str(stage)}')
+     GAMESCREEN.blit(stage_text, (25, 25 + playerLives.get_height() + 10))
 
      pygame.display.update()
 
