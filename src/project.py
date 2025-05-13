@@ -111,6 +111,9 @@ def gameWindowUpdating():
      pygame.draw.rect(GAMESCREEN, [173, 36, 105], [25 + playerLives.get_width() + 25,
                                                     25, asteroidsRectangleWidth,
                                                       playerLives.get_height()])
+     numAsteroids = calculateTotalAsteroids()
+     
+     
      pygame.display.update()
 
 
