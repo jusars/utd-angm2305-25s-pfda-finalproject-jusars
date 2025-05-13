@@ -301,7 +301,9 @@ bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 AsteroidImgA = {'large': [], 'medium': [], 'small': []}
 AsteroidImgB = {'large': [], 'medium': [], 'small': []}
-
+shootSound = pygame.mixer.Sound('assets/sounds/laser.wav')
+explSound = pygame.mixer.Sound('assets/sounds/bangSmall.wav')
+shipExplSound = pygame.mixer.Sound('assets/sounds/explosion.wav')
 # one off functions (loading gameobjects, etc)
     # loading asteroids
 asteroidImageLoading()
