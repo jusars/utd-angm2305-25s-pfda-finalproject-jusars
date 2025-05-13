@@ -8,7 +8,7 @@ pygame.init()
 """utility functions"""
 # tldr: function to load sprites (image) and resize when needed
 def openTopScoreFile():
-     with open('TopScoreFile.text') as file:
+     with open('TopScoreFile.txt') as file:
           topScore = int(file.read())
      file.close()
      return topScore
