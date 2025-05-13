@@ -158,6 +158,9 @@ class Asteroid(Player):
           self.imgRect.y = self.y - self.height // 2
           self.imgRect = pygame.rext.Rect(self.imgRect.x, self.imgRect.y,
                                           self.width, self.height)
+          self.direction = Vector2(random.randrange(-100, 100)/100,
+                                   random.randrange(-100, 100)/100)
+          self.speed = random.randrange(3, 6)
      
      def _generate_random_image_set(self):
           if self.size == 'large':
