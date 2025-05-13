@@ -305,9 +305,6 @@ shootSound = pygame.mixer.Sound('assets/sounds/laser.wav')
 smallExplSound = pygame.mixer.Sound('assets/sounds/bangSmall.wav')
 largeExplSound = pygame.mixer.Sound('assets/sounds/bangLarge.wav')
 shipExplSound = pygame.mixer.Sound('assets/sounds/explosion.wav')
-bgm = pygame.mixer.Sound('assets/sounds/Bomberman64_RedMountainTheme.wav')
-bgm.set_volume(0.3)
-
 # one off functions (loading gameobjects, etc)
     # loading asteroids
 asteroidImageLoading()
@@ -326,8 +323,6 @@ while running:
     if not gameover:
 
      stage_progression()
-
-     bgm.play(-1)
 
      # update game object movements
      player.move()
