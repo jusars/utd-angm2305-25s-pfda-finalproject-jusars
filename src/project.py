@@ -178,7 +178,9 @@ class Asteroid(Player):
      
      def accelerate(self):
           # increases speed of asteroid object
-          
+          self.velocity = self.direction * self.speed
+
+     
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
