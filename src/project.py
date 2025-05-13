@@ -251,10 +251,13 @@ while running:
               del playerBullets[index]
 
     for ind, asteroidObject in enumerate(asteroidObjects):
-         asteroidObject.move()
+          asteroidObject.move()
 
           for index, bullet in enumerate(playerBullets):
-              if bullet.bulletRect.collide
+               if bullet.bulletRect.colliderect(asteroidObject.imgRect):
+                    asteroidObject.health -= 1
+                    
+
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
