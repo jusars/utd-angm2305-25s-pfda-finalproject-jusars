@@ -379,13 +379,13 @@ while running:
                playerBullets.append(Bullet(player.pos, player.direction))
                shootSound.play()
           if gameover:
+               pygame.time.delay(30000)
                if event.key == pygame.K_TAB:
                     resetAfterLosingLife()
                     stage = 1
                     lives = 3
                     generate_asteroids()
                     gameover = False
-                    pygame.time.delay(30000)
 
     # handling inputs that are held down
     keys_pressed = pygame.key.get_pressed()
