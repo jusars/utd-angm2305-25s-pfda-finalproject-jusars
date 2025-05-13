@@ -95,6 +95,7 @@ def gameWindowUpdating():
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
+     # text display for score, lives, top score, stage, etc
      playerLives = textScreen(f'Player Lives: {str(lives)}')
      GAMESCREEN.blit(playerLives, (25, 25))
      stage_text = textScreen(f'STAGE: {str(stage)}')
@@ -104,7 +105,9 @@ def gameWindowUpdating():
      topscore_text = textScreen(f'TOP SCORE: {str(topscore)}')
      GAMESCREEN.blit(topscore_text, (screen_width - 25 - topscore_text.get_width(),
                                       25 + topscore_text.get_height() + 10)) 
-         
+     # percentage bar for asteroids destroyed
+
+     asteroidsRectangleWidth = screen_width
      pygame.display.update()
 
 
