@@ -107,9 +107,9 @@ def gameWindowUpdating():
                                       25 + topscore_text.get_height() + 10)) 
      # percentage bar for asteroids destroyed
 
-     asteroidsRectangleWidth = (screen_width - 100 - score_text.get_width() - playerLives.get_width)
+     asteroidSRectangleWidth = screen_width - 100 - score_text.get_width() - playerLives.get_width()
      pygame.draw.rect(GAMESCREEN, [173, 36, 105], [25 + playerLives.get_width() + 25,
-                                                    25, asteroidsRectangleWidth,
+                                                    25, asteroidSRectangleWidth,
                                                       playerLives.get_height()])
      pygame.display.update()
 
