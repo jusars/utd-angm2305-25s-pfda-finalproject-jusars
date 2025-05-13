@@ -324,7 +324,7 @@ while running:
 
      stage_progression()
 
-     pygame.mixer.music.load('assets/audio/Bomberman64_RedMountainTheme.wav')
+     pygame.mixer.music.load('assets/sounds/Bomberman64_RedMountainTheme.wav')
      pygame.mixer.music.set_volume(0.2)
      pygame.mixer.music.play(-1)
 
