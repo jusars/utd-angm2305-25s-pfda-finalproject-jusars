@@ -51,13 +51,16 @@ def generate_random_location():
      return asteroidLocation
 
 def stage_progression():
-     """long function sorry
-     checks # of asteroids on screen, increases stage level when no asteroids"""
+     """checks # of asteroids on screen, 
+     increases stage level when no asteroids"""
      global stage
      if len(asteroidObjects) == 0:
           stage += 1
 
-def 
+def generate_asteroids():
+     """generates 3 asteroids per level"""
+     for _ in range(stage):
+          asteroidObjects.append(Asteroid('large'))
 
 
 def gameWindowUpdating():
@@ -235,7 +238,7 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 
 # game object lists
 playerBullets = []
-asteroidobjects = []
+asteroidObjects = []
 
 # main game loop
 running = True
