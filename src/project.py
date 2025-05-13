@@ -201,7 +201,7 @@ class Asteroid(Player):
 
      def move (self):
           super().move() # reusing 'move' under player class lol
-          self.accelerate # acceleration exclusive to asteroids
+          self.accelerate() # acceleration exclusive to asteroids
 
      def _animate_image(self):
           """cycles thru numbered pngs. at random animation speeds"""
@@ -244,6 +244,7 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 # game object lists
 playerBullets = []
 asteroidObjects = []
+generate_asteroids()
 
 """MAIN GAME LOOP"""
 running = True
