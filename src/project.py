@@ -25,14 +25,10 @@ def asteroidImageLoading():
           else:
                imgSpriteSize = small
           for item in os.listdir(f'assets/asteroids/{imgSize}'):
-               if str(item)[:2] == 'a1':
-                    AsteroidImgA[imgSize].append(gameImageLoad
-                                                 (f'assets/asteroids/{imgSize}/{item}',
-                                                               (imgSpriteSize, imgSpriteSize)))
-               elif str(item)[:2] == 'a3':
-                    AsteroidImgA[imgSize].append(gameImageLoad
-                                                 (f'assets/asteroids/{imgSize}/{item}',
-                                                               (imgSpriteSize, imgSpriteSize)))
+            if str(item)[:2] == 'a1':
+                AsteroidImgA[imgSize].append(gameImageLoad(f'assets/asteroids/{imgSize}/{item}', (imgSpriteSize, imgSpriteSize)))
+            elif str(item)[:2] == 'a3':
+                AsteroidImgB[imgSize].append(gameImageLoad(f'assets/asteroids/{imgSize}/{item}', (imgSpriteSize, imgSpriteSize)))
 
 def generate_random_location():
      """generating random spawn locations for asteroids
@@ -187,7 +183,7 @@ class Asteroid(Player):
      
      def _generate_random_image_set(self):
           if self.size == 'large':
-               imgSet = random.choice([AsteroidImgA])
+               imgSet = random.choice([AsteroidImgA, AsteroidImgB])
           return imgSet
      
      def accelerate(self):
@@ -226,7 +222,7 @@ pygame.display.set_caption("legally distinct asteroids game")
 bg_img = gameImageLoad('assets/space.png', (screen_width, screen_height))
 player_img = gameImageLoad('assets/spaceship.png', (75, 75))
 AsteroidImgA = {'large': [], 'medium': [], 'small': []}
-
+AsteroidImgB = {'large': [], 'medium': [], 'small': []}
 
 # one off functions (loading gameobjects, etc)
     # loading asteroids
