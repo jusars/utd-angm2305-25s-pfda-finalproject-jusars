@@ -15,8 +15,8 @@ def gameImageLoad(imagefilepath, size):
 def asteroidImageLoading():
      # function for loading all the asteroid images + resize when needed
      large = 500
-     medium =  250
-     small = 100
+     medium =  350
+     small = 150
      for imgSize in ['large', 'medium', 'small']:
           if imgSize == 'large':
                imgSpriteSize = large
@@ -204,7 +204,7 @@ class Bullet:
           
      def draw(self, window):
           """draws bullet to screen"""
-          pygame.draw.rect(window, (132, 201, 217), [self.pos[0], self.pos[1], 
+          pygame.draw.rect(window, (177, 220, 230), [self.pos[0], self.pos[1], 
                                                      self.width, self.height])
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
                                                      self.width, self.height)
