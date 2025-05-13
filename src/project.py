@@ -100,12 +100,11 @@ def gameWindowUpdating():
      stage_text = textScreen(f'STAGE: {str(stage)}')
      GAMESCREEN.blit(stage_text, (25, 25 + playerLives.get_height() + 10))
      score_text = textScreen(f'SCORE: {str(score)}')
-     GAMESCREEN.blit(score_text, 
-                     (screen_width - 25 - score_text.get_height(), 25))
+     GAMESCREEN.blit(score_text, (screen_width - 25 - score_text.get_width(), 25))
      topscore_text = textScreen(f'TOP SCORE: {str(topscore)}')
-     GAMESCREEN.blit(topscore_text, 
-                     (screen_width - 25 - topscore_text.get_width(),
-                       25 + score.get_height() + 10))     
+     GAMESCREEN.blit(topscore_text, (screen_width - 25 - topscore_text.get_width(),
+                                      25 + topscore_text.get_height() + 10)) 
+         
      pygame.display.update()
 
 
