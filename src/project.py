@@ -166,7 +166,7 @@ class Asteroid(Player):
           # tldr: large asteroid: 3 hits, medium : 2 hits, small: 1 hit
           self.health = (3 if self.size == 'large' else 2
                          if self.size == 'medium' else 1)
-        
+          self.score = 10 if self.size == large
      
      def _generate_random_image_set(self):
           if self.size == 'large':
