@@ -274,7 +274,14 @@ while running:
                          del asteroidObjects[ind]
                     del playerBullets[index]
                     break
-
+          if asteroidObject.imgRect.collideRect(player.imgRect):
+               lives -= 1
+               if lives <= 0:
+                    gameover = True
+               else:
+                    resetAfterLosingLife()
+                    del asteroidObjects[ind]
+                    break
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
