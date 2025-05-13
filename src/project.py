@@ -72,6 +72,10 @@ def gameWindowUpdating():
           bullet.move()
           bullet.draw(GAMESCREEN)
 
+     for asteroidObject in asteroidObjects:
+          asteroidObject.draw(GAMESCREEN)
+          asteroidObject._animate_image()
+
      # drawing player image on screen
      player.draw(GAMESCREEN)
 
