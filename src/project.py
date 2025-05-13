@@ -259,8 +259,14 @@ while running:
           for index, bullet in enumerate(playerBullets):
                if bullet.bulletRect.colliderect(asteroidObject.imgRect):
                     asteroidObject.health -= 1
+                    score += asteroidObject.score
+                    if asteroidObject.health == 0:
+                         if asteroidObject.size == 'large':
+                              asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
+                                                              asteroidObject.imgSet))
+                              asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
+                                                              asteroidObject.imgSet))
           
-
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
