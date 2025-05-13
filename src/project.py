@@ -186,7 +186,10 @@ class Asteroid(Player):
 
      def _animate_image(self):
           """cycles thru numbered pngs. at random animation speeds"""
-          s
+          self.imgInd += 1
+          if self.imgInd % self.animate_speed == 0:
+               self.imgIndex = self.imgInd // self.animate_speed
+          if 
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
