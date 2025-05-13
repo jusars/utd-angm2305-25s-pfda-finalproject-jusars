@@ -76,14 +76,15 @@ def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
 
-     # drawing bullets to screen
-     for bullet in playerBullets:
-          bullet.move()
-          bullet.draw(GAMESCREEN)
+     if not gameover:
+          # drawing bullets to screen
+          for bullet in playerBullets:
+               bullet.move()
+               bullet.draw(GAMESCREEN)
 
-     for asteroidObject in asteroidObjects:
-          asteroidObject.draw(GAMESCREEN)
-          asteroidObject._animate_image()
+          for asteroidObject in asteroidObjects:
+               asteroidObject.draw(GAMESCREEN)
+               asteroidObject._animate_image()
 
      # drawing player image on screen
      player.draw(GAMESCREEN)
@@ -255,47 +256,49 @@ asteroidObjects = []
 running = True
 while running:
 
-    stage_progression()
+    if not gameover:
 
-    # update game object movements
-    player.move()
-    for index, bullet in enumerate(playerBullets):
-         bullet.move()
+     stage_progression()
 
-         # check to see if bullet is offscreen (and kills it)
-         if bullet.check_if_offscreen():
-              del playerBullets[index]
+     # update game object movements
+     player.move()
+     for index, bullet in enumerate(playerBullets):
+          bullet.move()
 
-    for ind, asteroidObject in enumerate(asteroidObjects):
-          asteroidObject.move()
+          # check to see if bullet is offscreen (and kills it)
+          if bullet.check_if_offscreen():
+               del playerBullets[index]
 
-          for index, bullet in enumerate(playerBullets):
-               if bullet.bulletRect.colliderect(asteroidObject.imgRect):
-                    asteroidObject.health -= 1
-                    score += asteroidObject.score
-                    if asteroidObject.health == 0:
-                         if asteroidObject.size == 'large':
-                              asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
-                                                              asteroidObject.imgSet))
-                              asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
-                                                              asteroidObject.imgSet))
-                         elif asteroidObject.size == 'medium':
-                              asteroidObjects.append(Asteroid('small', asteroidObject.pos,
-                                                              asteroidObject.imgSet))
-                              asteroidObjects.append(Asteroid('small', asteroidObject.pos,
-                                                              asteroidObject.imgSet))
+     for ind, asteroidObject in enumerate(asteroidObjects):
+               asteroidObject.move()
+
+               for index, bullet in enumerate(playerBullets):
+                    if bullet.bulletRect.colliderect(asteroidObject.imgRect):
+                         asteroidObject.health -= 1
+                         score += asteroidObject.score
+                         if asteroidObject.health == 0:
+                              if asteroidObject.size == 'large':
+                                   asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
+                                                                 asteroidObject.imgSet))
+                                   asteroidObjects.append(Asteroid('medium', asteroidObject.pos,
+                                                                 asteroidObject.imgSet))
+                              elif asteroidObject.size == 'medium':
+                                   asteroidObjects.append(Asteroid('small', asteroidObject.pos,
+                                                                 asteroidObject.imgSet))
+                                   asteroidObjects.append(Asteroid('small', asteroidObject.pos,
+                                                                 asteroidObject.imgSet))
+                              del asteroidObjects[ind]
+                         del playerBullets[index]
+                         break
+               if asteroidObject.imgRect.colliderect(player.imgRect):
+                    lives -= 1
+                    if lives <= 0:
+                         gameover = True
+                    else:
+                         resetAfterLosingLife()
                          del asteroidObjects[ind]
-                    del playerBullets[index]
+                         break
                     break
-          if asteroidObject.imgRect.collideRect(player.imgRect):
-               lives -= 1
-               if lives <= 0:
-                    gameover = True
-               else:
-                    resetAfterLosingLife()
-                    del asteroidObjects[ind]
-                    break
-               break
 
     # exit functionality + other inputs
     for event in pygame.event.get():
