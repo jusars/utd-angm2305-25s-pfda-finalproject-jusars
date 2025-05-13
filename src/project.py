@@ -183,12 +183,8 @@ class Asteroid(Player):
           self.imgInd = 0
           self.animate_speed = random.randrange(3, 7)
           # tldr: large asteroid: 3 hits, medium : 2 hits, small: 1 hit
-          self.health = (3 if self.size == 'large'
-                              else 2 if self.size == 'medium'
-                                   else 1)
-          self.score = (10 if self.size == 'large'
-                              else 20 if self.size == 'medium'
-                                   else 50)
+          self.health = 3 if self.size == 'large' else 2 if self.size == 'medium' else 1
+          self.score = 10 if self.size == 'large' else 20 if self.size == 'medium' else 50
      
      def _generate_random_image_set(self):
           if self.size == 'large':
@@ -198,10 +194,6 @@ class Asteroid(Player):
      def accelerate(self):
           # increases speed of asteroid object
           self.velocity = self.direction * self.speed
-
-     def move (self):
-          super().move() # reusing 'move' under player class lol
-          self.accelerate() # acceleration exclusive to asteroids
 
      def _animate_image(self):
           """cycles thru numbered pngs. at random animation speeds"""
@@ -213,6 +205,9 @@ class Asteroid(Player):
                self.imgIndex = 0
           self.img = self.imgSet[self.size][self.imgIndex]
 
+     def move (self):
+          super().move() # reusing 'move' under player class lol
+          self.accelerate() # acceleration exclusive to asteroids
 
 # game settings variables
 clock = pygame.time.Clock()
@@ -244,7 +239,6 @@ player = Player(((screen_width // 2), (screen_height // 2)))
 # game object lists
 playerBullets = []
 asteroidObjects = []
-generate_asteroids()
 
 """MAIN GAME LOOP"""
 running = True
