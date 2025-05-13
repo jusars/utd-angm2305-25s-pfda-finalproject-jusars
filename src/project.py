@@ -184,6 +184,9 @@ class Asteroid(Player):
           super().move() # reusing 'move' under player class lol
           self.accelerate # acceleration exclusive to asteroids
 
+     def _animate_image(self):
+          """cycles thru numbered pngs. at random animation speeds"""
+          s
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
