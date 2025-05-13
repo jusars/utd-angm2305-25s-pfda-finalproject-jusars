@@ -66,7 +66,12 @@ def resetAfterLosingLife():
      player.velocity = Vector2()
      playerBullets.clear()
      if not gameover:
-          
+          for index, asteroidObject in enumerate(asteroidObjects):
+               asteroidObject.pos = generate_random_location()
+          pygame.time.wait(3000)
+     else:
+          asteroidObjects.clear
+
 def gameWindowUpdating():
      # drawing bg image to screen
      GAMESCREEN.blit(bg_img, (0,0))
