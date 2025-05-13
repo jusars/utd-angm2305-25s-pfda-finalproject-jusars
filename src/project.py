@@ -129,6 +129,11 @@ def gameWindowUpdating():
                                                     25, asteroidsRectangleWidth * (numAsteroids/numAsteroidsRect),
                                                       playerLives.get_height()])
      
+     if gameover:
+          gameoverText = textScreen(f'Game Over!!! Press [TAB] to start again.')
+          GAMESCREEN.blit(game)
+
+
      pygame.display.update()
 
 
