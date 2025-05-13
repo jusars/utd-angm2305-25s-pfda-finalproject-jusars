@@ -271,10 +271,10 @@ while running:
                                                               asteroidObject.imgSet))
                               asteroidObjects.append(Asteroid('small', asteroidObject.pos,
                                                               asteroidObject.imgSet))
-                         del asteroidObjects(ind)
+                         del asteroidObjects[ind]
                     del playerBullets[index]
                     break
-               
+
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
