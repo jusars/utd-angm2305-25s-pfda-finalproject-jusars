@@ -324,6 +324,10 @@ while running:
 
      stage_progression()
 
+     pygame.mixer.music.load('assets/audio/Bomberman64_RedMountainTheme.wav')
+     pygame.mixer.music.set_volume(0.2)
+     pygame.mixer.music.play(-1)
+
      # update game object movements
      player.move()
      for index, bullet in enumerate(playerBullets):
@@ -360,6 +364,7 @@ while running:
                          break
                if asteroidObject.imgRect.colliderect(player.imgRect):
                     lives -= 1
+                    shipExplSound.play()
                     if lives <= 0:
                          gameover = True
                     else:
