@@ -266,7 +266,7 @@ class Asteroid(Player):
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 1920
-screen_height = 1080
+screen_height = 1440
 object_rotation_speed = 2
 object_speed = 0.25
 stage = 0
