@@ -180,7 +180,10 @@ class Asteroid(Player):
           # increases speed of asteroid object
           self.velocity = self.direction * self.speed
 
-     
+     def move (self):
+          super().move() # reusing 'move' under player class lol
+          self.accelerate # acceleration exclusive to asteroids
+
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
