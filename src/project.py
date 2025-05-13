@@ -78,7 +78,11 @@ def calculateTotalAsteroids():
      for asteroidObject in asteroidObjects:
           if asteroidObject.size == 'large':
                numAsteroids += 7
-          elif 
+          elif asteroidObject.size == 'medium'
+               numAsteroids += 3
+          else:
+               numAsteroids += 1
+     return numAsteroids
 
 def textScreen(message):
      """ putting text on the screen"""
@@ -120,7 +124,8 @@ def gameWindowUpdating():
                                                     25, asteroidsRectangleWidth,
                                                       playerLives.get_height()])
      numAsteroids = calculateTotalAsteroids()
-     
+     numAsteroidsRect = stage * 7
+     pyg
      
      pygame.display.update()
 
