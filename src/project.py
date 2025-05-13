@@ -10,6 +10,8 @@ pygame.init()
 def openTopScoreFile():
      with open('TopScoreFile.text') as file:
           topScore = int(file.read())
+     file.close()
+     return topScore
 
 
 def gameImageLoad(imagefilepath, size):
@@ -278,7 +280,7 @@ stage = 0
 lives = 3
 gameover = False
 score = 0
-topscore = None
+topscore = openTopScoreFile()
 
 # pygame display window
 GAMESCREEN = pygame.display.set_mode((screen_width, screen_height))
