@@ -58,6 +58,10 @@ def generate_asteroids():
      for _ in range(stage):
           asteroidObjects.append(Asteroid('large'))
 
+def resetAfterLosingLife():
+     """resetting player to mid. of screen + move
+     asteroids to new locations after player is hit."""
+     player.pos = (screen_width // 2, screen_height // 2)
 
 def gameWindowUpdating():
      # drawing bg image to screen
@@ -282,6 +286,8 @@ while running:
                     resetAfterLosingLife()
                     del asteroidObjects[ind]
                     break
+               break
+
     # exit functionality + other inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
