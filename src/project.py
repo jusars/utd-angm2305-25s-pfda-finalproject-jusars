@@ -72,6 +72,14 @@ def resetAfterLosingLife():
      else:
           asteroidObjects.clear()
 
+def calculateTotalAsteroids():
+     """calculates total # of asteroids on stage"""
+     numAsteroids = 0
+     for asteroidObject in asteroidObjects:
+          if asteroidObject.size == 'large':
+               numAsteroids += 7
+          elif 
+
 def textScreen(message):
      """ putting text on the screen"""
      font = pygame.font.SysFont('comicsans', 40)
