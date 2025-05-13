@@ -146,9 +146,8 @@ def gameWindowUpdating():
                                                       playerLives.get_height()])
      
      if gameover:
-          gameoverText = textScreen(f'Game Over!!! Press [TAB] to start again.')
+          gameoverText = textScreen(f'Game Over!!! Press [ESC] and start again.')
           GAMESCREEN.blit(gameoverText, ((screen_width // 2) - (gameoverText.get_width() // 2), 25))
-
 
      pygame.display.update()
 
@@ -379,7 +378,6 @@ while running:
                playerBullets.append(Bullet(player.pos, player.direction))
                shootSound.play()
           if gameover:
-               pygame.time.delay(30000)
                if event.key == pygame.K_TAB:
                     resetAfterLosingLife()
                     stage = 1
