@@ -17,6 +17,10 @@ def saveTopScore():
      global topscore
      if score > topscore:
           topscore = score
+          with open('TopScoreFile.txt', 'w') as file:
+               file.write(str(topscore))
+          file.close()
+     return
           
 
 def gameImageLoad(imagefilepath, size):
