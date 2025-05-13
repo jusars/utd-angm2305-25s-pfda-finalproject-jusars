@@ -300,7 +300,7 @@ while running:
                          break
                     break
 
-    # exit functionality + other inputs
+    # one time press inputs
     for event in pygame.event.get():
           if event.type == pygame.QUIT or (
             event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
@@ -308,8 +308,15 @@ while running:
             running = False
           if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                playerBullets.append(Bullet(player.pos, player.direction))
+          if gameover:
+               if event.key == pygame.K_TAB:
+                    resetAfterLosingLife()
+                    stage = 1
+                    lives = 3
+                    generate_asteroids()
+                    gameover = False
 
-    # handling input
+    # handling inputs that are held down
     keys_pressed = pygame.key.get_pressed()
     if keys_pressed[pygame.K_LEFT] or keys_pressed[pygame.K_a]:
          player.rotation(-2.5)
