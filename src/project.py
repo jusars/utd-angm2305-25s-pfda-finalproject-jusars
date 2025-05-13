@@ -150,10 +150,13 @@ class Asteroid(Player):
                              if self.size == 'large'else coords)
           self.imgSet = (self._generate_random_image_set() if not imgSet
                           else imgSet)
+          self.imgIndex = 0
+          self.img = self.imgSet[self.size][self.imgIndex]
      
      def _generate_random_image_set(self):
-
-
+          if self.size == 'large':
+               imgSet = random.choice([AsteroidImgA])
+          return imgSet
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
