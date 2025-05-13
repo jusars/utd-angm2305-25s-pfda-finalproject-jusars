@@ -84,7 +84,7 @@ def resetAfterLosingLife():
      if not gameover:
           for index, asteroidObject in enumerate(asteroidObjects):
                asteroidObject.pos = generate_random_location()
-          pygame.time.delay(2000)
+          pygame.time.wait(2000)
      else:
           asteroidObjects.clear()
 
