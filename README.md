@@ -1,2 +1,2 @@
-### utd-angm2305-25s-pfda-finalproject-jusars
-empty for now until final submission :)
+It's Asteroids! (legally distinct because I made all the assets).
+Steer your ship, shoot asteroids, try not to die.
