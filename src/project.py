@@ -131,7 +131,7 @@ def gameWindowUpdating():
      
      if gameover:
           gameoverText = textScreen(f'Game Over!!! Press [TAB] to start again.')
-          GAMESCREEN.blit(game)
+          GAMESCREEN.blit(gameoverText, ((screen_width // 2) - (gameoverText.get_width() // 2), 25))
 
 
      pygame.display.update()
