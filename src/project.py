@@ -224,8 +224,8 @@ class Bullet:
           
      def draw(self, window):
           """draws bullet to screen"""
-     #    pygame.draw.rect(window, (177, 220, 230), [self.pos[0], self.pos[1], 
-     #                                               self.width, self.height])
+          pygame.draw.rect(window, (177, 220, 230), [self.pos[0], self.pos[1], 
+                                                     self.width, self.height])
           self.bulletRect = pygame.rect.Rect(int(self.pos[0]), int(self.pos[1]),
                                                      self.width, self.height)
 
