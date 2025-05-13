@@ -164,14 +164,21 @@ class Asteroid(Player):
           self.imgInd = 0
           self.animate_speed = random.randrange(3, 7)
           # tldr: large asteroid: 3 hits, medium : 2 hits, small: 1 hit
-          self.health = (3 if self.size == 'large' else 2
-                         if self.size == 'medium' else 1)
-          self.score = 10 if self.size == large
+          self.health = (3 if self.size == 'large'
+                              else 2 if self.size == 'medium'
+                                   else 1)
+          self.score = (10 if self.size == 'large'
+                              else 20 if self.size == 'medium'
+                                   else 50)
      
      def _generate_random_image_set(self):
           if self.size == 'large':
                imgSet = random.choice([AsteroidImgA])
           return imgSet
+     
+     def accelerate(self):
+          # increases speed of asteroid object
+          
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
