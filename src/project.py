@@ -189,7 +189,9 @@ class Asteroid(Player):
           self.imgInd += 1
           if self.imgInd % self.animate_speed == 0:
                self.imgIndex = self.imgInd // self.animate_speed
-          if 
+          if self.imgIndex == len(self.imgSet[self.size]) - 1:
+               self.imgInd = 0
+               self.imgIndex = 0
 # game settings variables
 clock = pygame.time.Clock()
 screen_width = 2560
